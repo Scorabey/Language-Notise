@@ -1,0 +1,23 @@
+$white-main: #fafafa;
+$white-secondary: #f2eeeb;
+
+$secondary-brown-32: #9b5e33;
+$secondary-brown-16: #805639;
+$secondary-green: #4b9b33;
+$secondary-red: #9b3633;
+$secondary-yellow: #9b9833;
+
+$accent-main: #db7125;
+
+@mixin Literata($Weight: 400) {
+    font-family: 'Literata';
+    font-weight: $Weight;
+    font-style: normal;
+}
+
+$Container-max: 1440px;
+$Container-padding: 124px;
+$Container-width: calc($Container-max - ($Container-padding * 2));
+
+$Padding-y: 112px;
+$Padding-x: 124px;
