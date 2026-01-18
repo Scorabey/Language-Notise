@@ -1,4 +1,4 @@
-@use '../shared/styles/main.scss' as *;
+@use '../shared/styles/main.scss';
 @use '../shared/styles/variables.scss' as *;
 
 * {
@@ -37,6 +37,9 @@ h4,h5,h6,a,p,span,label,input {
 input {
     border: none;
 }
+.hidden {
+    display: none;
+}
 button {
     display: flex;
     justify-content: center;
@@ -51,5 +54,6 @@ button:hover {
     background-color: $accent-Main;
 }
 button:active {
-    scale: 0.95;
-} // Заглушка
+    background: #F28B24;
+    background: linear-gradient(180deg, rgba(242, 139, 36, 1) 0%, rgba(191, 110, 29, 1) 100%);   
+}

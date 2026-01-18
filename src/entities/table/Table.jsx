@@ -1,4 +1,4 @@
-import Search from '../../shared/ui/search/Search'
+import Search from '@/shared/ui/search/Search'
 import Wrapper from '../wrapper/Wrapper'
 import './Table.scss'
 

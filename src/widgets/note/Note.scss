@@ -1,5 +1,5 @@
-@use '../../shared/styles/variables.scss' as *;
-@use '../../shared/styles/main.scss';
+@use '@/shared/styles/variables.scss' as *;
+@use '@/shared/styles/main.scss';
 
 .container {
     display: flex;
@@ -11,6 +11,6 @@
     margin-top: 112px;
     max-width: $Container-Width;
     background-color: $BG-Dop;
-    border-radius: 13px;
+    border-radius: $Border-Radius;
     border: 1.2px solid $Seccond-Border;
 }

@@ -1,18 +1,19 @@
+import Delete from '../button/delete/Delete'
+import Rename from '../button/rename/Rename'
 import './Item.scss'
 
 function Item(props) {
     const {
-        Rename,
-        Delete,
-        title
+        hidden,
+        title,
     } = props
 
     return (
     <div className="wrapper__item wrapper__item-original">
-        <span>{title}</span>
+         <span>{title}</span>
         <div className="wrapper__item-frame">
-            {Rename}
-            {Delete}
+            <Rename />
+            <Delete hidden={hidden} />
         </div>
     </div>
     )

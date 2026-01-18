@@ -1,4 +1,4 @@
-import Input from '../../shared/ui/input/Input'
+import Input from '@/shared/ui/input/Input'
 import './FrameTitle.scss'
 
 function FrameTitle(props) {

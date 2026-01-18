@@ -1,4 +1,4 @@
-@use '../../shared/styles/variables.scss' as *;
+@use '@/shared/styles/variables.scss' as *;
 
 .wrapper {
     display: flex;
@@ -7,5 +7,5 @@
     padding: 12px 8px;
     overflow: hidden;
     border: 1.2px solid $Seccond-Border;
-    border-radius: 13px;
+    border-radius: $Border-Radius;
 }
