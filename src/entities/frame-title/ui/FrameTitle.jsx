@@ -4,9 +4,7 @@ import './FrameTitle.scss'
 
 export const FrameTitle = (props) => {
     const {
-        title,
-        newNotesInputRef,
-        addItem
+        title
     } = props
 
     return (
@@ -20,8 +18,6 @@ export const FrameTitle = (props) => {
             title='Input new note' 
             placeholder='Write new note...' 
             id='create'
-            newNotesInputRef={newNotesInputRef}
-            addItem={addItem}
             />
         </div>
     )

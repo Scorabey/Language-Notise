@@ -1,20 +1,24 @@
+import { NotesContext } from '@/shared/model/context/NotesContext'
 import { Delete } from '@/shared/ui/button/delete'
 import { Rename } from '@/shared/ui/button/rename'
-import { memo } from 'react'
+import { memo, useContext } from 'react'
 import './Item.scss'
 
 export const Item = (props) => {
     const {
+        deleteNote,
         isHidden,
         title,
-        deleteNote,
-        toggle,
-        isActive,
         id,
         field,
         value,
-        updateNote,
+        toggle,
+        isActive
     } = props
+
+    const {
+        updateNote
+    } = useContext(NotesContext)
 
     const onSubmit = (event) => {
         event.preventDefault()
@@ -37,15 +41,17 @@ export const Item = (props) => {
         >
 
         </input>
-        : <span onDoubleClick={toggle}>{value ?? title}</span>}
+        : <span 
+        onDoubleClick={toggle}
+        >{value ?? title}</span>}
         <div className="wrapper__item-frame">
             <Rename
             toggle={toggle}
-            isActive={isActive}
+            isActive={isActive} 
             />
             <Delete 
-            isHidden={isHidden}
             deleteNote={deleteNote}
+            isHidden={isHidden}
             />
         </div>
     </form>

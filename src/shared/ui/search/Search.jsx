@@ -1,13 +1,17 @@
-import { memo } from 'react'
+import { NotesContext } from '@/shared/model/context/NotesContext'
+import { memo, useContext } from 'react'
 import './Search.scss'
 
 export const Search = (props) => {
     const {
         title,
         type,
+    } = props
+
+    const {
         searchQuery,
         setSearchQuery
-    } = props
+    } = useContext(NotesContext)
 
     return (
         <form 

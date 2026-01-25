@@ -1,4 +1,5 @@
-import { memo } from 'react';
+import { NotesContext } from '@/shared/model/context/NotesContext';
+import { memo, useContext } from 'react';
 import './Add.scss';
 
 export const Add = (props) => {
@@ -7,9 +8,12 @@ export const Add = (props) => {
         id,
         value,
         onChange,
-        addItem,
-        ref
     } = props
+
+    const {
+        newNotesInputRef,
+        addItem,
+    } = useContext(NotesContext)
 
     const onSubmit = (event) => {
         event.preventDefault()
@@ -24,7 +28,7 @@ export const Add = (props) => {
             placeholder={placeholder}
             value={value}
             onChange={onChange}
-            ref={ref}
+            ref={newNotesInputRef}
             />
             <button 
             title='Add new note'

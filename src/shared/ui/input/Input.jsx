@@ -8,18 +8,14 @@ export const Input = (props) => {
         title,
         placeholder,
         id,
-        newNotesInputRef,
-        addItem
     } = props
 
     return (
         <div className="frame__labelInput">
             <label htmlFor={id}>{title}</label>
             <Add 
-            id={id} 
+            id={id}
             placeholder={placeholder}
-            ref={newNotesInputRef}
-            addItem={addItem}
             />
         </div>
     )

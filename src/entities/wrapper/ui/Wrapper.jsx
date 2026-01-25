@@ -1,23 +1,30 @@
+import { NotesContext } from '@/shared/model/context/NotesContext';
 import { Item } from '@/shared/ui/Item/Item';
-import { useState } from 'react';
+import { useContext, useState } from 'react';
 import 'swiper/css';
 import { Controller } from 'swiper/modules';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import './Wrapper.scss';
 
-export const Wrapper = (props) => {
+export const Wrapper = () => {
     const {
         notes,
         deleteNote,
         toggleRename,
         activeEdit,
-        updateNote,
         filteredNotes
-    } = props
+    } = useContext(NotesContext)
 
     const [swiper1, setSwiper1] = useState(null);
     const [swiper2, setSwiper2] = useState(null);
     const [swiper3, setSwiper3] = useState(null);
+
+    const swiperSettings = {
+        className: 'swiper-wrapper',
+        direction: 'vertical',
+        slidesPerView: "auto",
+        spaceBetween: 8
+    }
 
     return (
         <>
@@ -26,10 +33,7 @@ export const Wrapper = (props) => {
             modules={[Controller]}
             onSwiper={setSwiper1}
             controller={{ control: swiper2 }}
-            className='swiper-wrapper'
-            direction='vertical'
-            slidesPerView="auto"
-            spaceBetween={8}
+            {...swiperSettings}
             >
                 {(filteredNotes ?? notes).map(note => (
                 <SwiperSlide
@@ -43,7 +47,6 @@ export const Wrapper = (props) => {
                         activeEdit.id === note.id &&
                         activeEdit.field === 'Original'
                     }
-                    updateNote={updateNote}
                     field='Word'
                     id={note.id}
                     value={note.Word}
@@ -58,10 +61,7 @@ export const Wrapper = (props) => {
             modules={[Controller]}
             onSwiper={setSwiper2}
             controller={{ control: swiper1 }}
-            className='swiper-wrapper'
-            direction='vertical'
-            slidesPerView="auto"
-            spaceBetween={8}
+            {...swiperSettings}
             >
                 {(filteredNotes ?? notes).map(note => (
                     <SwiperSlide
@@ -69,14 +69,13 @@ export const Wrapper = (props) => {
                     key={note.id}
                     >
                         <Item 
-                        isHidden={true} 
+                        isHidden={true}
                         deleteNote={() => deleteNote(note.id)}
                         toggle={() => toggleRename(note.id, 'Translate')}
                         isActive={
                             activeEdit.id === note.id &&
                             activeEdit.field === 'Translate'
                         }
-                        updateNote={updateNote}
                         field='Translate'
                         id={note.id}
                         value={note.Translate}
@@ -91,10 +90,7 @@ export const Wrapper = (props) => {
             modules={[Controller]}
             onSwiper={setSwiper3}
             controller={{ control: swiper1 }}
-            className='swiper-wrapper'
-            direction='vertical'
-            slidesPerView="auto"
-            spaceBetween={8}
+            {...swiperSettings}
             >
                 {(filteredNotes ?? notes).map(note => (
                     <SwiperSlide
@@ -108,7 +104,6 @@ export const Wrapper = (props) => {
                             activeEdit.id === note.id &&
                             activeEdit.field === 'Tag'
                         }
-                        updateNote={updateNote}
                         field='Tag'
                         id={note.id}
                         value={note.Tag}
