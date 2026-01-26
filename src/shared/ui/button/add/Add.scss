@@ -13,4 +13,9 @@
             font-size: 18px;
         }
     }
+    .frame__add:disabled {
+        background-color: $Seccond-Disabled;
+        background-color: $Seccond-Disabled;
+        cursor: not-allowed;
+    }
 }

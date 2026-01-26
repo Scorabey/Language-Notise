@@ -12,6 +12,8 @@
 
     span {
         font-size: clamp(16px, 1.11vw, 12px);
+        max-width: 220px;
+        overflow-x: hidden;
     }
 
     input {

@@ -21,6 +21,8 @@ export const NotesProvider = (props) => {
 
     const newNotesInputRef = useRef(null)
 
+    const [newNoteWord, setNewNoteWord] = useState('')
+
     const [isActive, setIsActive] = useState(false)
 
     const [activeEdit, setActiveEdit] = useState({
@@ -47,24 +49,23 @@ export const NotesProvider = (props) => {
     const toggle = useCallback(() => {
         setIsActive(prev => !prev)
     }, [])
-    const addItem = useCallback(() => {
-        const value = newNotesInputRef.current.value
-        if(!value.trim()) return
+    const addItem = useCallback((checking) => {
+        if(!checking) return
 
         setNotes(prev => [
             ...prev,
             {
                 id: crypto?.randomUUID() ?? Date.now().toString(),
-                Word: value,
+                Word: newNoteWord,
                 Translate: null,
                 Tag: null
             }
         ])
 
-        newNotesInputRef.current.value = ''
+        setNewNoteWord('')
         setSearchQuery('')
         newNotesInputRef.current.focus()
-    }, [])  
+    }, [newNoteWord])  
     const deleteNote = useCallback((noteId) => {
         const isConfirmed = confirm('Are you sure delete this note?')
 
@@ -109,7 +110,9 @@ export const NotesProvider = (props) => {
             activeEdit,
             notes,
             searchQuery,
-            setSearchQuery
+            setSearchQuery,
+            newNoteWord,
+            setNewNoteWord
         }}
         >
             {children}

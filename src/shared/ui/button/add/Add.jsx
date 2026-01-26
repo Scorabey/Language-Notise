@@ -6,18 +6,20 @@ export const Add = (props) => {
     const {
         placeholder,
         id,
-        value,
-        onChange,
+        isDisabled,
+        emptyNote
     } = props
 
     const {
-        newNotesInputRef,
+        newNoteWord,
         addItem,
+        setNewNoteWord,
+        newNotesInputRef
     } = useContext(NotesContext)
 
     const onSubmit = (event) => {
         event.preventDefault()
-        addItem()
+        addItem(emptyNote)
     }
 
     return (
@@ -26,14 +28,15 @@ export const Add = (props) => {
             type="text" 
             id={id}
             placeholder={placeholder}
-            value={value}
-            onChange={onChange}
+            value={newNoteWord}
+            onChange={(e) => setNewNoteWord(e.target.value)}
             ref={newNotesInputRef}
             />
             <button 
             title='Add new note'
             className="frame__add"
             type='submit'
+            disabled={isDisabled}
             >
                 <span>ADD</span>
             </button>

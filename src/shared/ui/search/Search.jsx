@@ -28,7 +28,7 @@ export const Search = (props) => {
             className='table__search'
             type={type} 
             id='Search' 
-            placeholder='Search...'
+            placeholder='Search note'
             value={searchQuery}
             onInput={(event) => setSearchQuery(event.target.value)}
             />

@@ -47,7 +47,7 @@ export const Item = (props) => {
         <div className="wrapper__item-frame">
             <Rename
             toggle={toggle}
-            isActive={isActive} 
+            isActive={isActive}
             />
             <Delete 
             deleteNote={deleteNote}

@@ -9,7 +9,7 @@ export const Table = () => {
     return (
         <div className="table">
             <Label title='Your original word!' />
-            <Search 
+            <Search
             type='search' 
             title='Your translate word!'
             />
