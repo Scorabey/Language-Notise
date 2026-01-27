@@ -2,7 +2,7 @@ import { NotesContext } from '@/shared/model/context/NotesContext';
 import { Item } from '@/shared/ui/Item/Item';
 import { useContext, useState } from 'react';
 import 'swiper/css';
-import { Controller } from 'swiper/modules';
+import { Controller, FreeMode, Mousewheel, Scrollbar } from 'swiper/modules';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import './Wrapper.scss';
 
@@ -23,7 +23,18 @@ export const Wrapper = () => {
         className: 'swiper-wrapper',
         direction: 'vertical',
         slidesPerView: "auto",
-        spaceBetween: 8
+        spaceBetween: 8,
+        speed: 100,
+        mousewheel: {
+            forceToAxis: true,
+            sensitivity: 0.4,
+            releaseOnEdges: true,
+            smoothScroll: true,
+        },
+        freeMode: {
+            enabled: true,
+            momentum: true
+        }
     }
 
     return (
@@ -34,7 +45,7 @@ export const Wrapper = () => {
             ) 
             : (
             <Swiper
-            modules={[Controller]}
+            modules={[Controller, Mousewheel, FreeMode]}
             onSwiper={setSwiper1}
             controller={{ control: swiper2 }}
             {...swiperSettings}
@@ -67,7 +78,7 @@ export const Wrapper = () => {
             ) 
             : (
             <Swiper
-            modules={[Controller]}
+            modules={[Controller, Mousewheel, FreeMode]}
             onSwiper={setSwiper2}
             controller={{ control: swiper1 }}
             {...swiperSettings}
@@ -101,9 +112,13 @@ export const Wrapper = () => {
             ) 
             : (
             <Swiper
-            modules={[Controller]}
+            modules={[Controller, Scrollbar, Mousewheel, FreeMode]}
             onSwiper={setSwiper3}
             controller={{ control: swiper1 }}
+            scrollbar={{
+                draggable: true,
+                hide: false
+            }}
             {...swiperSettings}
             >
                 {(filteredNotes ?? notes).map(note => (

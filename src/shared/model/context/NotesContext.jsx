@@ -1,3 +1,4 @@
+import noteApi from "@/shared/api/notesApi";
 import { createContext, useCallback, useEffect, useMemo, useRef, useState } from "react";
 
 export const NotesContext = createContext({})
@@ -5,18 +6,7 @@ export const NotesContext = createContext({})
 export const NotesProvider = (props) => {
     const { children } = props
 
-    const [notes, setNotes] = useState(() => {
-        const savedNotes = localStorage.getItem('notes')
-
-        if(savedNotes) {
-            return JSON.parse(savedNotes)
-        }
-
-        return  [
-        {id: 'note-1', Word: 'Aplication', Translate: 'Приложение', Tag: '#software'},
-        {id: 'note-2', Word: 'Network', Translate: 'Соединение', Tag: '#network'}
-    ]
-    })
+    const [notes, setNotes] = useState([])
 
     const newNotesInputRef = useRef(null)
 
@@ -32,11 +22,9 @@ export const NotesProvider = (props) => {
     const [searchQuery, setSearchQuery] = useState('')
 
     useEffect(() => {
-        localStorage.setItem('notes', JSON.stringify(notes))
-    }, [notes])
-
-    useEffect(() => {
         newNotesInputRef.current.focus()
+
+        noteApi.getAll().then(setNotes)
     }, [])
     const toggleRename = (id, field) => {
         setActiveEdit(prev => 
@@ -51,37 +39,44 @@ export const NotesProvider = (props) => {
     const addItem = useCallback((checking) => {
         if(!checking) return
 
-        setNotes(prev => [
-            ...prev,
+        const newNotes = 
             {
-                id: crypto?.randomUUID() ?? Date.now().toString(),
                 Word: newNoteWord,
                 Translate: '',
                 Tag: ''
             }
-        ])
 
-        setNewNoteWord('')
-        setSearchQuery('')
-        newNotesInputRef.current.focus()
+            noteApi.Add(newNotes)
+                .then((addedNote) => {
+                    setNotes((prev) => [...prev, addedNote])
+                    setNewNoteWord('')
+                    setSearchQuery('')
+                    newNotesInputRef.current.focus()
+                })
     }, [newNoteWord])  
     const deleteNote = useCallback((noteId) => {
         const isConfirmed = confirm('Are you sure delete this note?')
 
         if(isConfirmed) {
-            setNotes(prevNotes => 
-                prevNotes.filter((note) => note.id !== noteId)
-            )
+            noteApi.Delete(noteId)
+                .then(() => {
+                    setNotes(prevNotes => 
+                        prevNotes.filter((note) => note.id !== noteId)
+                        )
+                    })
         }
     }, [])
     const updateNote = useCallback((id, field, value) => {
-        setNotes(prev => 
-            prev.map(note => 
-                note.id === id
-                ? {...note, [field]: value}
-                : note
-            )
-        )
+        noteApi.ToggleComplete(id, { [field]: value })
+            .then(() => {
+                setNotes(prev => 
+                    prev.map(note => 
+                        note.id === id
+                        ? {...note, [field]: value}
+                        : note
+                    )
+                )
+            })
     }, [])
     const clearSearchQuery = searchQuery.trim().toLowerCase()
 
