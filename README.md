@@ -8,9 +8,9 @@ The app allows users to quickly add new words, organize them into categories, an
 ## Technologies
 
 
-![Main Page]()
-![search Note]()
-![Rename Note]()
+![Main Page](./public/MainPage.png)
+![search Note](./public/Search.png)
+![Rename Note](./public/Rename.png)
 
 -React
 
