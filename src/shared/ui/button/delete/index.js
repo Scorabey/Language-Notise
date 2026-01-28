@@ -1,1 +1,1 @@
-export { Delete } from './Delete';
+export { Delete } from './Delete'

@@ -1,1 +1,1 @@
-export { Wrapper } from './ui/Wrapper';
+export { Wrapper } from './ui/Wrapper'

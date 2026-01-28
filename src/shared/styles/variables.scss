@@ -1,44 +1,41 @@
 $BG-Main: #121111;
-$BG-Dop: #24211F;
-
-$Seccond-Main: #2E2B28;
-$Seccond-Main-Text: #E0D5CA;
-$Seccond-Dop-Text: #ABA39B;
-$Seccond-Hover: #332E2B;
-$Seccond-Active: #38322E;
-$Seccond-Border: #3D3936;
-$Seccond-Disabled: #66615C;
+$BG-Dop: #24211f;
+$Seccond-Main: #2e2b28;
+$Seccond-Main-Text: #e0d5ca;
+$Seccond-Dop-Text: #aba39b;
+$Seccond-Hover: #332e2b;
+$Seccond-Active: #38322e;
+$Seccond-Border: #3d3936;
+$Seccond-Disabled: #66615c;
 $Seccond-Placeholder: #595550;
-$Seccond-Red: #994D4D;
-$Seccond-Green: #4D994D;
-
-$accent-Main: #D97D21;
-
+$Seccond-Red: #994d4d;
+$Seccond-Green: #4d994d;
+$accent-Main: #d97d21;
 $Transition-Darution: 0.2s;
 $Transition-Mode: ease;
-
 $Border-Radius: 13px;
 $Border-Width: 1.2px;
-
 $Padding-X: 124px;
 $Container-Width: 1192px;
 
 @mixin Literata($Weight: 400) {
-    font-family: 'Literata';
-    font-weight: $Weight;
-    font-style: normal;
+  font-family: Literata;
+  font-weight: $Weight;
+  font-style: normal;
 }
+
 @mixin input {
-    background-color: $Seccond-Main;
-    border-radius: $Border-Radius;
-    border: 1.2px solid $Seccond-Border;
-    padding-inline: 8px;
-    padding-top: 12px;
-    padding-bottom: 12px;
+  background-color: $Seccond-Main;
+  border-radius: $Border-Radius;
+  border: 1.2px solid $Seccond-Border;
+  padding-inline: 8px;
+  padding-top: 12px;
+  padding-bottom: 12px;
 }
+
 @mixin list {
-    background-color: $Seccond-Main;
-    border-radius: $Border-Radius;
-    border-width: $Border-Width;
-    padding-left: 8px;
+  background-color: $Seccond-Main;
+  border-radius: $Border-Radius;
+  border-width: $Border-Width;
+  padding-left: 8px;
 }

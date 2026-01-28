@@ -1,15 +1,15 @@
 @use '@/shared/styles/variables.scss' as *;
 
 .table {
-    display: grid;
-    max-width: 100%;
-    height: 542px;
-    gap: 6px 6px;
-    background-color: $BG-Dop;
-    padding: 26px 12px;
-    border: 1.2px solid $Seccond-Border;
-    border-radius: $Border-Radius;
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-template-rows: 2fr 8fr;
-    overflow: hidden;
+  display: grid;
+  max-width: 100%;
+  height: 542px;
+  gap: 6px;
+  background-color: $BG-Dop;
+  padding: 26px 12px;
+  border: 1.2px solid $Seccond-Border;
+  border-radius: $Border-Radius;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 2fr 8fr;
+  overflow: hidden;
 }

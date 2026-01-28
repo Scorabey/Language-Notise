@@ -1,29 +1,32 @@
 @use '@/shared/styles/variables.scss' as *;
-.frame__input {
-    display: flex;
-    position: relative;
-    flex-direction: row;
-    gap: 8px;
-    .frame__add {
-        display: flex;
-        box-sizing: border-box;
-        width: 60px;
-        height: 45px;
 
-        span {
-            font-size: 16px;
-        }
+.frame__input {
+  display: flex;
+  position: relative;
+  flex-direction: row;
+  gap: 8px;
+
+  .frame__add {
+    display: flex;
+    box-sizing: border-box;
+    width: 60px;
+    height: 45px;
+
+    span {
+      font-size: 16px;
     }
-    .frame__add:disabled {
-        background-color: $Seccond-Disabled;
-        background-color: $Seccond-Disabled;
-        cursor: not-allowed;
-    }
-    .frame__error {
-        position: absolute;
-        bottom: -15px;
-        left: 10px;
-        font-size: 14px;
-        color: $Seccond-Red;
-    }
+  }
+
+  .frame__add:disabled {
+    background-color: $Seccond-Disabled;
+    cursor: not-allowed;
+  }
+
+  .frame__error {
+    position: absolute;
+    bottom: -15px;
+    left: 10px;
+    font-size: 14px;
+    color: $Seccond-Red;
+  }
 }

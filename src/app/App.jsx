@@ -1,13 +1,12 @@
 import Note from '@/widgets'
-import { NotesProvider } from '../shared/model/context/NotesContext'
+import { NotesProvider } from '../shared/model/context/NotesProvider'
 import './global.scss'
 
 export const App = () => {
-
   return (
     <NotesProvider>
-      <h1 className='visually-hidden'>Language Notese</h1>
-      <Note/>
+      <h1 className="visually-hidden">Language Notese</h1>
+      <Note />
     </NotesProvider>
   )
 }

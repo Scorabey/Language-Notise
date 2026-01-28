@@ -1,41 +1,42 @@
 @use '@/shared/styles/variables.scss' as *;
 
 .wrapper {
-    display: flex;
-    position: relative;
-    flex-direction: column;
-    gap: 10px;
-    padding: 12px 8px;
-    overflow: hidden;
-    border: 1.2px solid $Seccond-Border;
-    border-radius: $Border-Radius;
+  display: flex;
+  position: relative;
+  flex-direction: column;
+  gap: 10px;
+  padding: 12px 8px;
+  overflow: hidden;
+  border: 1.2px solid $Seccond-Border;
+  border-radius: $Border-Radius;
 
-    .is-Empty {
-        position: absolute;
-        left: 25%;
-        top: 40%;
-        color: $Seccond-Disabled;
-        font-size: 38px;
-        user-select: none;
-    }
+  .is-Empty {
+    position: absolute;
+    left: 25%;
+    top: 40%;
+    color: $Seccond-Disabled;
+    font-size: 38px;
+    user-select: none;
+  }
 }
+
 .swiper-item {
-    height: auto;
+  height: auto;
 }
 
 .swiper-scrollbar {
-    display: flex;
-    justify-content: center;
-    margin-left: 5px;
-    width: 5px;
-    height: 100%;
-    border-radius: 3px;
-    background-color: $Seccond-Border;
+  display: flex;
+  justify-content: center;
+  margin-left: 5px;
+  width: 5px;
+  height: 100%;
+  border-radius: 3px;
+  background-color: $Seccond-Border;
 }
 
 .swiper-scrollbar-drag {
-    background-color: $accent-Main;
-    padding: 2px;
-    width: 3px;
-    border-radius: 3px;
+  background-color: $accent-Main;
+  padding: 2px;
+  width: 3px;
+  border-radius: 3px;
 }

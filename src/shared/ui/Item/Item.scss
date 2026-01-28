@@ -1,40 +1,40 @@
 @use '@/shared/styles/variables.scss' as *;
 
 .wrapper__item {
+  display: flex;
+  flex-direction: row;
+  padding-left: 8px;
+  align-items: center;
+  justify-content: space-between;
+  border: 1.2px solid $Seccond-Border;
+  border-radius: 13px 3px 3px 13px;
+  height: 45px;
+
+  span {
+    font-size: clamp(16px, 1.11vw, 12px);
+    max-width: 220px;
+    overflow: hidden scroll;
+  }
+
+  input {
     display: flex;
-    flex-direction: row;
-    padding-left: 8px;
+    width: 238px;
+    height: 35px;
+    box-sizing: border-box;
+    background-color: transparent;
+    border-radius: $Border-Radius;
+    padding: 12px 8px;
+    transition: all $Transition-Darution $Transition-Mode;
+  }
+
+  input:focus {
+    outline: none;
+  }
+
+  .wrapper__item-frame {
+    display: flex;
+    justify-content: center;
     align-items: center;
-    justify-content: space-between;
-    border: 1.2px solid $Seccond-Border;
-    border-radius: 13px 3px 3px 13px;
-    height: 45px;
-
-    span {
-        font-size: clamp(16px, 1.11vw, 12px);
-        max-width: 220px;
-        overflow-x: hidden;
-        overflow-y: scroll;
-    }
-
-    input {
-        display: flex;
-        width: 238px;
-        height: 35px;
-        box-sizing: border-box;
-        background-color: transparent;
-        border-radius: $Border-Radius;
-        padding: 12px 8px;
-        transition: all $Transition-Darution $Transition-Mode;
-    }
-    input:focus {
-        outline: none;
-    }
-
-    .wrapper__item-frame {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        gap: 8px;
-    }
+    gap: 8px;
+  }
 }

@@ -1,2 +1,1 @@
-export { FrameTitle } from './ui/FrameTitle';
-
+export { FrameTitle } from './ui/FrameTitle'

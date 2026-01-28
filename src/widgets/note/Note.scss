@@ -1,16 +1,16 @@
 @use '@/shared/styles/variables.scss' as *;
-@use '@/shared/styles/main.scss';
+@use '@/shared/styles/main';
 
 .container {
-    display: flex;
-    position: relative;
-    flex-direction: column;
-    gap: 16px;
-    padding: 32px 48px;
-    margin: 0 auto;
-    margin-top: 112px;
-    max-width: $Container-Width;
-    background-color: $BG-Dop;
-    border-radius: $Border-Radius;
-    border: 1.2px solid $Seccond-Border;
+  display: flex;
+  position: relative;
+  flex-direction: column;
+  gap: 16px;
+  padding: 32px 48px;
+  margin: 0 auto;
+  margin-top: 112px;
+  max-width: $Container-Width;
+  background-color: $BG-Dop;
+  border-radius: $Border-Radius;
+  border: 1.2px solid $Seccond-Border;
 }

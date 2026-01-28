@@ -1,11 +1,11 @@
 @use '@/shared/styles/variables.scss' as *;
 
 .frame {
-    display: flex;
-    flex-direction: column;
-    gap: 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
 
-    .frame__title {
-        font-size: clamp(48px, 3.33vw, 24px);
-    }
+  .frame__title {
+    font-size: clamp(48px, 3.33vw, 24px);
+  }
 }

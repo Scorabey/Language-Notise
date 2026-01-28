@@ -1,14 +1,14 @@
 @use '@/shared/styles/variables.scss' as *;
 
 .item__delete {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    max-width: clamp(44px, 3.06vw, 36px);
-    height: 43px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  max-width: clamp(44px, 3.06vw, 36px);
+  height: 43px;
 
-    svg {
-        max-width: clamp(32px, 2.22vw, 24px);
-        height: 32px;
-    }
+  svg {
+    max-width: clamp(32px, 2.22vw, 24px);
+    height: 32px;
+  }
 }
