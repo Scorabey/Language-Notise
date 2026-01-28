@@ -5,12 +5,11 @@ The app allows users to quickly add new words, organize them into categories, an
 
 ## Screenshots
 
-## Technologies
-
-
-![Main Page](MainPage.png)
-![search Note](Search.png)
+![Main Page](MainPage.png) 
+![search Note](Search.png) 
 ![Rename Note](Rename.png)
+
+## Technologies
 
 -React
 
