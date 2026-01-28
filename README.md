@@ -23,4 +23,4 @@ The app allows users to quickly add new words, organize them into categories, an
 
 1. Clone the repository:
 ```bash
-git clone 
+git clone https://github.com/Scorabey/Language-Notese.git
