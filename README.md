@@ -8,10 +8,15 @@ The app allows users to quickly add new words, organize them into categories, an
 ## Technologies
 
 -React
+
 -React context API
+
 -Vite
+
 -SCSS modules
+
 -Plagins: Swiper, autoprefixer, stylelint, prettier
+
 -JSON Server
 
 ## Features 
